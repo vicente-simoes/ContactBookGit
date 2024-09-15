@@ -106,4 +106,20 @@ public class ContactBook {
         return contacts[result].getName();
     }
 
+    private boolean checkRepetedNumbers(){
+        int i = 0;
+
+        while(i<counter){
+            int j = i+1;
+            while(j < counter){
+                if(contacts[i].getPhone() == contacts[j].getPhone()){
+                    return true;
+                }
+                j++;
+            }
+            i++;
+        }
+        return false;
+    }
+
 }
