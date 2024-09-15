@@ -93,7 +93,7 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
-    private String giveName(int number) {
+    public String giveName(int number) {
         int i = 0;
         int result = -1;
         boolean found = false;
@@ -103,10 +103,12 @@ public class ContactBook {
             else
                 i++;
         if (found) result = i;
+        if (result == -1)
+            return null;
         return contacts[result].getName();
     }
 
-    private boolean checkRepetedNumbers(){
+    public boolean checkRepetedNumbers(){
         int i = 0;
 
         while(i<counter){
