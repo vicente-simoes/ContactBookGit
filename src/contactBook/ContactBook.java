@@ -93,4 +93,17 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    private String giveName(int number) {
+        int i = 0;
+        int result = -1;
+        boolean found = false;
+        while (i<counter && !found)
+            if (contacts[i].getPhone() == number)
+                found = true;
+            else
+                i++;
+        if (found) result = i;
+        return contacts[result].getName();
+    }
+
 }
